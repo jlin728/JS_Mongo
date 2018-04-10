@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message Board</title>
+</head>
+<body>
+    <h1> The Dojo Message Board </h1>
+    <form action = "/newmsg" method = "post">
+        Name:<br>
+        <input type = "text" name = "name"><br>
+        Post:<br>
+        <textarea type = "text" name = "post" rows = "4" cols = "50"></textarea><br>
+
+        <input type = "submit" value = "Post Message"><br><br>
+
+    </form><br>
+<hr>
+    <h1>Posts:</h1>
+    <% for (var i in posts) { %>
+        Name: <%= posts[i].name %> <br>
+        Post: <%= posts[i].post %>  <br>
+        
+        
+        
+        <!-- <%= posts[i]._comments %><br> -->
+        <!-- <%= typeof(posts[i]._comments) %> -->
+        <p>
+            <% for (var comment of posts[i]._comments) { %>
+                
+                Name: <%= comment.name %>      <br>
+                Comment: <%= comment.comment %>  <br>
+            <% } %>
+                <form action = "/newcomm/<%= posts[i]._id%>" method = "post">
+                    Name:<br>
+                    <input type = "text" name = "name"><br>
+                    Comment:<br>
+                    <textarea type = "text" name = "comment" rows = "4" cols = "50"></textarea><br>
+            
+                    <input type = "submit" value = "Add Comment"><br>
+                
+                <hr>
+            
+    <% } %>
+
+
+</body>
+</html>

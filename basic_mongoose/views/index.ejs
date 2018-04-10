@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>New User</title>
+</head>
+<body>
+    <h1>This is just a test</h1>
+    <form action ="/users" method = "POST">
+        Name:<input name = "name" type = "text"><br>
+        Age: <input name = "age" type = "number"><br>
+        <input type = "submit" value = "Submit">
+    </form><br>
+    <h2>All Users</h2>
+        <% for (var x in users) { %>
+            Name: <%= users[x].name %>, Age:<%= users[x].age %><br>
+        <% } %>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>All animals</title>
+</head>
+<body>
+    <h1>Animals in the database:</h1>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>About</th>
+            <th>Action</th>          
+        </tr>
+        <% for (var x in animals) { %>
+        <tr>
+              
+                
+                    <td> <a href="/animal/<%= animals[x]._id%>"> <%= animals[x].name %> </a></td>   
+                    <td> <%= animals[x].about %> </td>  
+                    <td> <a href="/edit/<%= animals[x]._id%>" > Edit </a> | <a href="/destroy/<%= animals[x]._id%>"> Delete </a></td> 
+                  
+                
+               
+        </tr>
+        <% } %>
+
+    </table><br>
+    <button><a href="/newAnimal">Add Animal</a></button>
+    
+</body>
+</html>

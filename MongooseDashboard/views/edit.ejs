@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="wiadth=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add New Animal</title>
+</head>
+<body>
+<button><a href= "/"> Home </a></button><br>
+   
+        <form action ="/edit/<%=animals.id%>" method = "POST">
+            Name:<input name = "name" type = "text" placeholder = '<%=animals.name%>' > <br>
+            About: <textarea name = "about" type = "text" rows = "4" cols = "50"  ><%=animals.about%> </textarea> <br>
+            <input type = "submit" value = "Update Animal"><br><br>
+        </form> 
+       
+
+</body>
+</html>
